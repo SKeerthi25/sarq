@@ -185,11 +185,8 @@ export const Projects: React.FC = () => {
                   <h4 className="font-heading text-xs font-bold uppercase text-ink line-clamp-1 group-hover:text-brand transition-colors">
                     {photo.title}
                   </h4>
-                  <div className="flex items-center justify-between text-[11px] font-mono text-muted mt-1.5">
-                    <span className="flex items-center gap-1">
-                      <MapPin className="w-3 h-3 text-brand" /> {photo.location}
-                    </span>
-                    <span className="text-brand font-semibold">{photo.category}</span>
+                  <div className="text-[11px] font-mono text-brand font-semibold mt-1">
+                    {photo.category}
                   </div>
                 </div>
               </div>
