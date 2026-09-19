@@ -35,7 +35,7 @@ export const faqsData: FAQItem[] = [
     id: 'typical-timelines',
     category: 'Timescales & Process',
     question: 'How long do domestic extensions, lofts, and refurbishments typically take?',
-    answer: 'Typical on-site build times are: Single-storey rear extension: 12–16 weeks; Mansard / Dormer loft conversion: 8–12 weeks; Full house back-to-brick refurbishment: 16–24 weeks; Basement subterranean excavation: 24–36 weeks; Bespoke new build: 36–52 weeks. We supply a detailed weekly Gantt chart schedule at contract signing and provide weekly photo and progress updates.'
+    answer: 'On-site build times vary depending on structural complexity and project scope. We supply a detailed Gantt chart schedule at contract signing and provide regular photo and milestone progress updates through your dedicated project manager.'
   },
   {
     id: 'living-in-during-works',

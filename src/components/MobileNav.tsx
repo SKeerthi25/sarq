@@ -55,16 +55,16 @@ export const MobileNav: React.FC<MobileNavProps> = ({
 
       {/* Drawer */}
       <div
-        className="relative z-10 w-full max-w-sm bg-surface-deep text-surface shadow-2xl flex flex-col justify-between overflow-y-auto animate-in slide-in-from-right duration-200 h-full"
+        className="relative z-10 w-full max-w-sm bg-white text-slate-900 shadow-2xl flex flex-col justify-between overflow-y-auto animate-in slide-in-from-right duration-200 h-full border-l border-slate-200"
       >
         {/* Drawer Header */}
-        <div className="p-5 border-b border-white/10 flex items-center justify-between shrink-0 bg-surface-deep">
-          <Logo variant="footer" size="sm" onClick={onClose} />
+        <div className="p-5 border-b border-slate-100 flex items-center justify-between shrink-0 bg-white">
+          <Logo variant="header" size="sm" onClick={onClose} />
 
           <button
             type="button"
             onClick={onClose}
-            className="p-2 rounded bg-white/10 text-white hover:bg-brand transition-colors focus:outline-none"
+            className="p-2 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-slate-900 transition-colors focus:outline-none"
             aria-label="Close navigation drawer"
           >
             <X className="w-5 h-5" />
@@ -72,13 +72,13 @@ export const MobileNav: React.FC<MobileNavProps> = ({
         </div>
 
         {/* Nav Links */}
-        <nav className="px-5 py-6 space-y-1 flex-1">
+        <nav className="px-5 py-6 space-y-1 flex-1 bg-white">
           <NavLink
             to="/"
             onClick={onClose}
             className={({ isActive }) =>
-              `block px-4 py-3 rounded font-heading text-lg font-bold uppercase tracking-wider transition-colors ${
-                isActive ? 'bg-brand text-white' : 'text-surface hover:bg-white/5'
+              `block px-4 py-3 rounded-lg font-heading text-base font-bold uppercase tracking-wider transition-colors ${
+                isActive ? 'bg-brand text-white shadow-sm' : 'text-slate-800 hover:bg-slate-50 hover:text-brand'
               }`
             }
           >
@@ -89,8 +89,8 @@ export const MobileNav: React.FC<MobileNavProps> = ({
             to="/about"
             onClick={onClose}
             className={({ isActive }) =>
-              `block px-4 py-3 rounded font-heading text-lg font-bold uppercase tracking-wider transition-colors ${
-                isActive ? 'bg-brand text-white' : 'text-surface hover:bg-white/5'
+              `block px-4 py-3 rounded-lg font-heading text-base font-bold uppercase tracking-wider transition-colors ${
+                isActive ? 'bg-brand text-white shadow-sm' : 'text-slate-800 hover:bg-slate-50 hover:text-brand'
               }`
             }
           >
@@ -102,22 +102,22 @@ export const MobileNav: React.FC<MobileNavProps> = ({
             <button
               type="button"
               onClick={() => setServicesExpanded(!servicesExpanded)}
-              className="w-full flex items-center justify-between px-4 py-3 rounded font-heading text-lg font-bold uppercase tracking-wider text-surface hover:bg-white/5 transition-colors"
+              className="w-full flex items-center justify-between px-4 py-3 rounded-lg font-heading text-base font-bold uppercase tracking-wider text-slate-800 hover:bg-slate-50 hover:text-brand transition-colors"
             >
               <span>Services</span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-200 ${
-                  servicesExpanded ? 'rotate-180 text-accent' : 'text-muted'
+                  servicesExpanded ? 'rotate-180 text-brand' : 'text-slate-400'
                 }`}
               />
             </button>
 
             {servicesExpanded && (
-              <div className="pl-4 pr-2 space-y-1 my-1 border-l-2 border-brand/50 ml-4 animate-in fade-in duration-150">
+              <div className="pl-4 pr-2 space-y-1 my-1 border-l-2 border-brand ml-4 animate-in fade-in duration-150">
                 <NavLink
                   to="/services"
                   onClick={onClose}
-                  className="block py-2 text-xs font-mono text-accent hover:text-white uppercase tracking-wider font-bold"
+                  className="block py-2 text-xs font-mono text-brand hover:underline uppercase tracking-wider font-bold"
                 >
                   → View All Services Hub
                 </NavLink>
@@ -128,7 +128,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({
                     onClick={onClose}
                     className={({ isActive }) =>
                       `block py-2 text-sm font-medium transition-colors ${
-                        isActive ? 'text-accent font-bold' : 'text-surface/80 hover:text-white'
+                        isActive ? 'text-brand font-bold' : 'text-slate-600 hover:text-brand hover:bg-slate-50 rounded px-2'
                       }`
                     }
                   >
@@ -143,8 +143,8 @@ export const MobileNav: React.FC<MobileNavProps> = ({
             to="/projects"
             onClick={onClose}
             className={({ isActive }) =>
-              `block px-4 py-3 rounded font-heading text-lg font-bold uppercase tracking-wider transition-colors ${
-                isActive ? 'bg-brand text-white' : 'text-surface hover:bg-white/5'
+              `block px-4 py-3 rounded-lg font-heading text-base font-bold uppercase tracking-wider transition-colors ${
+                isActive ? 'bg-brand text-white shadow-sm' : 'text-slate-800 hover:bg-slate-50 hover:text-brand'
               }`
             }
           >
@@ -155,8 +155,8 @@ export const MobileNav: React.FC<MobileNavProps> = ({
             to="/process"
             onClick={onClose}
             className={({ isActive }) =>
-              `block px-4 py-3 rounded font-heading text-lg font-bold uppercase tracking-wider transition-colors ${
-                isActive ? 'bg-brand text-white' : 'text-surface hover:bg-white/5'
+              `block px-4 py-3 rounded-lg font-heading text-base font-bold uppercase tracking-wider transition-colors ${
+                isActive ? 'bg-brand text-white shadow-sm' : 'text-slate-800 hover:bg-slate-50 hover:text-brand'
               }`
             }
           >
@@ -164,23 +164,11 @@ export const MobileNav: React.FC<MobileNavProps> = ({
           </NavLink>
 
           <NavLink
-            to="/quote-cost-guide"
-            onClick={onClose}
-            className={({ isActive }) =>
-              `block px-4 py-3 rounded font-heading text-lg font-bold uppercase tracking-wider transition-colors ${
-                isActive ? 'bg-brand text-white' : 'text-surface hover:bg-white/5'
-              }`
-            }
-          >
-            Cost Calculator & Pricing
-          </NavLink>
-
-          <NavLink
             to="/accreditations"
             onClick={onClose}
             className={({ isActive }) =>
-              `block px-4 py-3 rounded font-heading text-lg font-bold uppercase tracking-wider transition-colors ${
-                isActive ? 'bg-brand text-white' : 'text-surface hover:bg-white/5'
+              `block px-4 py-3 rounded-lg font-heading text-base font-bold uppercase tracking-wider transition-colors ${
+                isActive ? 'bg-brand text-white shadow-sm' : 'text-slate-800 hover:bg-slate-50 hover:text-brand'
               }`
             }
           >
@@ -191,8 +179,8 @@ export const MobileNav: React.FC<MobileNavProps> = ({
             to="/testimonials"
             onClick={onClose}
             className={({ isActive }) =>
-              `block px-4 py-3 rounded font-heading text-lg font-bold uppercase tracking-wider transition-colors ${
-                isActive ? 'bg-brand text-white' : 'text-surface hover:bg-white/5'
+              `block px-4 py-3 rounded-lg font-heading text-base font-bold uppercase tracking-wider transition-colors ${
+                isActive ? 'bg-brand text-white shadow-sm' : 'text-slate-800 hover:bg-slate-50 hover:text-brand'
               }`
             }
           >
@@ -200,23 +188,11 @@ export const MobileNav: React.FC<MobileNavProps> = ({
           </NavLink>
 
           <NavLink
-            to="/areas-we-cover"
-            onClick={onClose}
-            className={({ isActive }) =>
-              `block px-4 py-3 rounded font-heading text-lg font-bold uppercase tracking-wider transition-colors ${
-                isActive ? 'bg-brand text-white' : 'text-surface hover:bg-white/5'
-              }`
-            }
-          >
-            Areas We Cover
-          </NavLink>
-
-          <NavLink
             to="/faq"
             onClick={onClose}
             className={({ isActive }) =>
-              `block px-4 py-3 rounded font-heading text-lg font-bold uppercase tracking-wider transition-colors ${
-                isActive ? 'bg-brand text-white' : 'text-surface hover:bg-white/5'
+              `block px-4 py-3 rounded-lg font-heading text-base font-bold uppercase tracking-wider transition-colors ${
+                isActive ? 'bg-brand text-white shadow-sm' : 'text-slate-800 hover:bg-slate-50 hover:text-brand'
               }`
             }
           >
@@ -227,8 +203,8 @@ export const MobileNav: React.FC<MobileNavProps> = ({
             to="/contact"
             onClick={onClose}
             className={({ isActive }) =>
-              `block px-4 py-3 rounded font-heading text-lg font-bold uppercase tracking-wider transition-colors ${
-                isActive ? 'bg-brand text-white' : 'text-surface hover:bg-white/5'
+              `block px-4 py-3 rounded-lg font-heading text-base font-bold uppercase tracking-wider transition-colors ${
+                isActive ? 'bg-brand text-white shadow-sm' : 'text-slate-800 hover:bg-slate-50 hover:text-brand'
               }`
             }
           >
@@ -237,7 +213,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({
         </nav>
 
         {/* Drawer Footer Details */}
-        <div className="p-5 border-t border-white/10 bg-black/20 space-y-4 shrink-0">
+        <div className="p-5 border-t border-slate-100 bg-slate-50 space-y-4 shrink-0">
           <Button
             variant="accent"
             size="md"
@@ -250,21 +226,21 @@ export const MobileNav: React.FC<MobileNavProps> = ({
             Request a Detailed Quote
           </Button>
 
-          <div className="space-y-1.5 text-xs text-surface/70 font-mono">
-            <a href="tel:07448492982" onClick={onClose} className="flex items-center gap-2 hover:text-accent">
-              <Phone className="w-3.5 h-3.5 text-accent" /> 07448492982
+          <div className="space-y-1.5 text-xs text-slate-600 font-mono">
+            <a href="tel:07448492982" onClick={onClose} className="flex items-center gap-2 hover:text-brand font-medium">
+              <Phone className="w-3.5 h-3.5 text-brand" /> 07448492982
             </a>
-            <a href="mailto:cons@sarqltd.com" onClick={onClose} className="flex items-center gap-2 hover:text-accent">
-              <Mail className="w-3.5 h-3.5 text-accent" /> cons@sarqltd.com
+            <a href="mailto:cons@sarqltd.com" onClick={onClose} className="flex items-center gap-2 hover:text-brand font-medium">
+              <Mail className="w-3.5 h-3.5 text-brand" /> cons@sarqltd.com
             </a>
             <div className="flex items-center gap-2">
-              <MapPin className="w-3.5 h-3.5 text-accent shrink-0" /> Battersea, London SW11
+              <MapPin className="w-3.5 h-3.5 text-brand shrink-0" /> Battersea, London SW11
             </div>
-            <div className="flex items-start gap-2 pt-1 border-t border-white/10 text-white/90">
-              <Clock className="w-3.5 h-3.5 text-accent shrink-0 mt-0.5" />
-              <div className="space-y-0.5 text-[10px]">
-                <div>Mon – Fri: <span className="text-white font-bold">09:00 – 18:00</span></div>
-                <div>Sat – Sun: <span className="text-white font-bold">10:00 – 16:00</span></div>
+            <div className="flex items-start gap-2 pt-2 border-t border-slate-200 text-slate-700">
+              <Clock className="w-3.5 h-3.5 text-brand shrink-0 mt-0.5" />
+              <div className="space-y-0.5 text-[11px]">
+                <div>Mon – Fri: <span className="text-slate-900 font-bold">09:00 – 18:00</span></div>
+                <div>Sat – Sun: <span className="text-slate-900 font-bold">10:00 – 16:00</span></div>
               </div>
             </div>
           </div>

@@ -6,6 +6,7 @@ import { MobileNav } from '../components/MobileNav';
 import { CookieBanner } from '../components/CookieBanner';
 import { WhatsAppButton } from '../components/WhatsAppButton';
 import { ScrollToTop } from '../components/ScrollToTop';
+import { SplashLoader } from '../components/SplashLoader';
 
 export const Layout: React.FC = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -50,6 +51,9 @@ export const Layout: React.FC = () => {
 
       {/* GDPR Cookie Consent */}
       <CookieBanner />
+
+      {/* 3-Second Introduction Splash Loader */}
+      <SplashLoader durationMs={3000} />
     </div>
   );
 };

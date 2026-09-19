@@ -76,23 +76,17 @@ export const Projects: React.FC = () => {
                       src={project.coverImage}
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src = '/photos/image.png';
+                      }}
                     />
                     <div className="absolute top-3 left-3 bg-ink/90 backdrop-blur-sm text-accent text-[11px] font-mono px-2.5 py-1 rounded border border-accent/20">
                       {project.category}
-                    </div>
-                    <div className="absolute bottom-3 right-3 bg-black/70 backdrop-blur-sm text-white text-[11px] font-mono px-2 py-0.5 rounded flex items-center gap-1">
-                      <MapPin className="w-3 h-3 text-accent" /> {project.postcode}
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="p-6">
-                    <div className="flex items-center gap-3 text-xs font-mono text-muted mb-2">
-                      <span>{project.location}</span>
-                      <span>•</span>
-                      <span>{project.duration}</span>
-                    </div>
-
                     <h3 className="font-heading text-xl font-bold uppercase text-ink group-hover:text-brand transition-colors">
                       {project.title}
                     </h3>
@@ -230,8 +224,8 @@ export const Projects: React.FC = () => {
             <Button variant="accent" size="lg" pill to="/request-a-quote">
               Request Project Quote
             </Button>
-            <Button variant="white" size="lg" pill to="/quote-cost-guide">
-              Cost Calculator
+            <Button variant="white" size="lg" pill to="/contact">
+              Contact Team
             </Button>
           </div>
         </div>

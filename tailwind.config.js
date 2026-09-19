@@ -23,9 +23,9 @@ export default {
         hairline: 'var(--color-hairline)',
       },
       fontFamily: {
-        heading: ['Outfit', 'Montserrat', 'sans-serif'],
-        sans: ['Inter', '"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        mono: ['Inter', '"Plus Jakarta Sans"', 'sans-serif'],
+        heading: ['"Plus Jakarta Sans"', 'Outfit', 'Montserrat', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        mono: ['Inter', '"Plus Jakarta Sans"', 'monospace'],
       },
       borderRadius: {
         DEFAULT: '4px',

@@ -68,6 +68,9 @@ export const ServicesHub: React.FC = () => {
                     src={svc.heroImage}
                     alt={svc.title}
                     className="w-full aspect-[4/3] object-cover"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = '/photos/image.png';
+                    }}
                   />
                   <div className="absolute top-3 left-3 bg-ink/90 backdrop-blur-sm text-accent font-mono text-xs px-2.5 py-1 rounded border border-accent/20">
                     0{index + 1} // DOMESTIC
@@ -87,7 +90,7 @@ export const ServicesHub: React.FC = () => {
                     </div>
 
                     <div className="font-mono text-xs text-brand font-bold bg-brand/10 px-3 py-1.5 rounded self-start sm:self-auto">
-                      From {svc.startingCost} • ~{svc.durationAvg}
+                      From {svc.startingCost}
                     </div>
                   </div>
 
@@ -145,8 +148,8 @@ export const ServicesHub: React.FC = () => {
             <Button variant="primary" size="lg" pill to="/request-a-quote">
               Book a Free Site Survey
             </Button>
-            <Button variant="outline" size="lg" pill to="/quote-cost-guide">
-              Calculate Project Cost
+            <Button variant="outline" size="lg" pill to="/projects">
+              View Portfolio
             </Button>
           </div>
         </div>

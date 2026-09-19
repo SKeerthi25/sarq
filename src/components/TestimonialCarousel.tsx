@@ -52,18 +52,15 @@ export const TestimonialCarousel: React.FC<{ maxItems?: number }> = ({ maxItems 
 
               <div className="mt-8 pt-6 border-t border-hairline flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
-                  <div className="flex items-center gap-2">
-                    <h4 className="font-heading text-lg font-bold uppercase text-ink">
-                      {current.clientName}
-                    </h4>
+                  <div className="flex items-center gap-2 mb-1">
                     {current.verified && (
-                      <span className="flex items-center gap-1 text-[11px] font-mono text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">
-                        <CheckCircle2 className="w-3 h-3" /> Verified Client
+                      <span className="flex items-center gap-1 text-[11px] font-mono text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-semibold">
+                        <CheckCircle2 className="w-3 h-3" /> Verified Client Review
                       </span>
                     )}
                   </div>
                   <p className="text-xs sm:text-sm text-muted font-mono mt-0.5">
-                    {current.projectType} • {current.location}
+                    {current.projectType}
                   </p>
                 </div>
 

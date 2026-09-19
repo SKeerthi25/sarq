@@ -77,8 +77,8 @@ export const KitchensBathrooms: React.FC = () => {
                 <Button variant="accent" size="lg" pill to="/request-a-quote">
                   Book Kitchen & Bathroom Survey
                 </Button>
-                <Button variant="white" size="lg" pill to="/quote-cost-guide">
-                  Estimate Fit-out Costs
+                <Button variant="white" size="lg" pill to="/projects">
+                  View Case Studies
                 </Button>
               </div>
             </div>
@@ -89,10 +89,6 @@ export const KitchensBathrooms: React.FC = () => {
                   Fit-Out Highlights
                 </h3>
                 <div className="space-y-3 text-xs font-mono">
-                  <div className="flex justify-between border-b border-white/10 pb-1.5">
-                    <span className="text-surface/60">Typical Installation:</span>
-                    <span className="text-white font-bold">{service.durationAvg}</span>
-                  </div>
                   <div className="flex justify-between border-b border-white/10 pb-1.5">
                     <span className="text-surface/60">Starting Baseline:</span>
                     <span className="text-accent font-bold">From {service.startingCost}</span>
@@ -137,6 +133,9 @@ export const KitchensBathrooms: React.FC = () => {
                     src={item.image}
                     alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = '/photos/image.png';
+                    }}
                   />
                   <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div className="bg-ink/80 text-white p-3 rounded-full backdrop-blur-sm">

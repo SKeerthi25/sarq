@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Main 4-Column Footer Navigation */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 py-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-12 border-b border-white/10">
           {/* Col 1: Brand & Statutory (2 cols on lg) */}
           <div className="lg:col-span-2 space-y-4">
             <Logo variant="footer" size="lg" />
@@ -94,11 +94,6 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/quote-cost-guide" className="text-surface/80 hover:text-accent transition-colors">
-                  Online Cost Estimator
-                </Link>
-              </li>
-              <li>
                 <Link to="/accreditations" className="text-surface/80 hover:text-accent transition-colors">
                   Building Regs & Standards
                 </Link>
@@ -116,50 +111,6 @@ export const Footer: React.FC = () => {
               <li>
                 <Link to="/careers" className="text-surface/80 hover:text-accent transition-colors">
                   Subcontractor Portal
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 4: Areas Covered */}
-          <div>
-            <h5 className="font-heading text-sm font-bold uppercase tracking-wider text-white mb-4">
-              Areas Covered
-            </h5>
-            <ul className="space-y-2.5 text-xs">
-              <li>
-                <Link to="/areas-we-cover" className="text-surface/80 hover:text-accent transition-colors">
-                  Battersea & SW11
-                </Link>
-              </li>
-              <li>
-                <Link to="/areas-we-cover" className="text-surface/80 hover:text-accent transition-colors">
-                  Clapham & SW4
-                </Link>
-              </li>
-              <li>
-                <Link to="/areas-we-cover" className="text-surface/80 hover:text-accent transition-colors">
-                  Wandsworth & SW18
-                </Link>
-              </li>
-              <li>
-                <Link to="/areas-we-cover" className="text-surface/80 hover:text-accent transition-colors">
-                  Putney & SW15
-                </Link>
-              </li>
-              <li>
-                <Link to="/areas-we-cover" className="text-surface/80 hover:text-accent transition-colors">
-                  Fulham & SW6
-                </Link>
-              </li>
-              <li>
-                <Link to="/areas-we-cover" className="text-surface/80 hover:text-accent transition-colors">
-                  Wimbledon & SW19
-                </Link>
-              </li>
-              <li>
-                <Link to="/areas-we-cover" className="text-surface/80 hover:text-accent transition-colors">
-                  Greater London (M25)
                 </Link>
               </li>
             </ul>

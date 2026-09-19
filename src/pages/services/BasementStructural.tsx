@@ -57,8 +57,8 @@ export const BasementStructural: React.FC = () => {
                 <Button variant="accent" size="lg" pill to="/request-a-quote">
                   Consult Structural Engineering Team
                 </Button>
-                <Button variant="white" size="lg" pill to="/quote-cost-guide">
-                  Estimate Basement Cost
+                <Button variant="white" size="lg" pill to="/projects">
+                  View Basement Projects
                 </Button>
               </div>
             </div>
@@ -69,10 +69,6 @@ export const BasementStructural: React.FC = () => {
                   Basement Engineering Metrics
                 </h3>
                 <div className="space-y-3 text-xs font-mono">
-                  <div className="flex justify-between border-b border-white/10 pb-1.5">
-                    <span className="text-surface/60">Typical Excavation Duration:</span>
-                    <span className="text-white font-bold">{service.durationAvg}</span>
-                  </div>
                   <div className="flex justify-between border-b border-white/10 pb-1.5">
                     <span className="text-surface/60">Starting Baseline:</span>
                     <span className="text-accent font-bold">From {service.startingCost}</span>

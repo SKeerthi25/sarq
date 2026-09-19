@@ -69,8 +69,6 @@ export const Header: React.FC<HeaderProps> = ({
             </span>
             <span>•</span>
             <span>Battersea, Wandsworth, Clapham & Greater London</span>
-            <span>•</span>
-            <span className="text-emerald-700 dark:text-emerald-400 font-semibold">10-Year Insurance-Backed Guarantees</span>
           </div>
 
           <div className="flex items-center gap-4">
@@ -162,7 +160,7 @@ export const Header: React.FC<HeaderProps> = ({
                               {svc.shortTitle}
                             </div>
                             <div className="text-[11px] text-muted line-clamp-1 mt-0.5">
-                              {svc.startingCost} • {svc.durationAvg}
+                              From {svc.startingCost}
                             </div>
                           </div>
                         </Link>
@@ -188,13 +186,6 @@ export const Header: React.FC<HeaderProps> = ({
                         >
                           <span>Full Services Hub</span>
                           <ArrowRight className="w-3.5 h-3.5" />
-                        </Link>
-                        <Link
-                          to="/quote-cost-guide"
-                          className="flex items-center justify-between text-xs font-mono text-muted hover:text-ink"
-                        >
-                          <span>Cost Calculator</span>
-                          <span>→</span>
                         </Link>
                       </div>
                     </div>
@@ -223,17 +214,6 @@ export const Header: React.FC<HeaderProps> = ({
               }
             >
               Process
-            </NavLink>
-
-            <NavLink
-              to="/quote-cost-guide"
-              className={({ isActive }) =>
-                `font-heading text-sm font-bold uppercase tracking-wider transition-colors ${
-                  isActive ? 'text-brand' : 'text-ink hover:text-brand'
-                }`
-              }
-            >
-              Cost Guide
             </NavLink>
 
             <NavLink

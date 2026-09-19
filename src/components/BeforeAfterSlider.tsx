@@ -72,6 +72,9 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
         alt="After construction"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         loading="lazy"
+        onError={(e) => {
+          (e.currentTarget as HTMLImageElement).src = '/photos/image.png';
+        }}
       />
       <div className="absolute top-4 right-4 bg-ink/80 backdrop-blur-sm text-accent text-xs font-mono font-bold px-3 py-1 rounded border border-accent/30 pointer-events-none z-10">
         {afterLabel}
@@ -91,6 +94,9 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
             maxWidth: 'none',
           }}
           loading="lazy"
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).src = '/photos/image copy 2.png';
+          }}
         />
         <div className="absolute top-4 left-4 bg-ink/80 backdrop-blur-sm text-white text-xs font-mono font-bold px-3 py-1 rounded border border-white/20 pointer-events-none z-10">
           {beforeLabel}

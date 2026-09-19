@@ -93,8 +93,8 @@ export const LoftConversions: React.FC = () => {
                 <Button variant="accent" size="lg" pill to="/request-a-quote">
                   Book Free Loft Feasibility Survey
                 </Button>
-                <Button variant="white" size="lg" pill to="/quote-cost-guide">
-                  Estimate Loft Budget
+                <Button variant="white" size="lg" pill to="/projects">
+                  View Loft Projects
                 </Button>
               </div>
             </div>
@@ -105,10 +105,6 @@ export const LoftConversions: React.FC = () => {
                   Loft Conversion Benchmarks
                 </h3>
                 <div className="space-y-3 text-xs font-mono">
-                  <div className="flex justify-between border-b border-white/10 pb-1.5">
-                    <span className="text-surface/60">Typical Build Duration:</span>
-                    <span className="text-white font-bold">{service.durationAvg}</span>
-                  </div>
                   <div className="flex justify-between border-b border-white/10 pb-1.5">
                     <span className="text-surface/60">Starting Baseline:</span>
                     <span className="text-accent font-bold">From {service.startingCost}</span>
@@ -151,7 +147,6 @@ export const LoftConversions: React.FC = () => {
                     <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-brand/10 text-brand uppercase">
                       Option 0{idx + 1}
                     </span>
-                    <span className="text-xs font-mono text-muted">{item.duration}</span>
                   </div>
 
                   <h3 className="font-heading text-2xl font-bold uppercase text-ink">
@@ -210,7 +205,7 @@ export const LoftConversions: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeading
               number="02"
-              microLabel="Clapham Mansard Case Study"
+              microLabel="Mansard Loft Case Study"
               title={loftProject.title}
               subtitle="Inspect our conservation-approved 70-degree Mansard master suite with walk-in wardrobe and boutique en-suite."
             />

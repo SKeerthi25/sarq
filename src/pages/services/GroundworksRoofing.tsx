@@ -62,8 +62,8 @@ export const GroundworksRoofing: React.FC = () => {
                 <Button variant="accent" size="lg" pill to="/request-a-quote">
                   Book Site Survey for External Works
                 </Button>
-                <Button variant="white" size="lg" pill to="/quote-cost-guide">
-                  Estimate Project Costs
+                <Button variant="white" size="lg" pill to="/projects">
+                  View External Projects
                 </Button>
               </div>
             </div>
@@ -74,10 +74,6 @@ export const GroundworksRoofing: React.FC = () => {
                   External Infrastructure Metrics
                 </h3>
                 <div className="space-y-3 text-xs font-mono">
-                  <div className="flex justify-between border-b border-white/10 pb-1.5">
-                    <span className="text-surface/60">Typical Duration:</span>
-                    <span className="text-white font-bold">{service.durationAvg}</span>
-                  </div>
                   <div className="flex justify-between border-b border-white/10 pb-1.5">
                     <span className="text-surface/60">Starting Baseline:</span>
                     <span className="text-accent font-bold">From {service.startingCost}</span>

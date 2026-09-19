@@ -18,8 +18,7 @@ import { SEO } from '../components/SEO';
 import { SectionHeading } from '../components/SectionHeading';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
-import { TeamMember } from '../types';
-import { teamData, accreditationsData } from '../data/accreditations';
+import { accreditationsData } from '../data/accreditations';
 
 export const About: React.FC = () => {
   const companyValues = [
@@ -111,9 +110,12 @@ export const About: React.FC = () => {
             <div className="lg:col-span-5">
               <div className="relative rounded-md border border-hairline overflow-hidden shadow-xl bg-surface-deep">
                 <img
-                  src="https://images.unsplash.com/photo-1541888946425-d0fbb186156a?auto=format&fit=crop&w=1200&q=80"
+                  src="/photos/image copy 6.png"
                   alt="SARQ Construction on site"
                   className="w-full aspect-[4/3] object-cover"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/photos/image.png';
+                  }}
                 />
                 <div className="p-4 bg-card border-t border-hairline">
                   <div className="flex items-center gap-2 text-xs font-mono text-ink font-bold">
@@ -155,63 +157,7 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      {/* 4. LEADERSHIP & SITE MANAGEMENT TEAM */}
-      <section className="py-20 bg-card border-b border-hairline">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            number="02"
-            microLabel="The People On Site"
-            title="Leadership & Technical Team"
-            subtitle="Experienced construction managers, chartered quantity surveyors, and structural specialists dedicated to your project."
-          />
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {teamData.map((member: TeamMember, i: number) => (
-              <div
-                key={i}
-                className="rounded-md border border-hairline bg-surface overflow-hidden flex flex-col justify-between group hover:border-brand/40 transition-colors"
-              >
-                <div>
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full aspect-square object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
-                  />
-                  <div className="p-5">
-                    <h4 className="font-heading text-lg font-bold uppercase text-ink">
-                      {member.name}
-                    </h4>
-                    <p className="text-xs font-mono text-brand font-semibold mt-0.5">
-                      {member.role}
-                    </p>
-                    <p className="text-[11px] font-mono text-muted mt-0.5">
-                      {member.experience}
-                    </p>
-                    <p className="text-xs text-ink/80 mt-3 leading-relaxed">
-                      {member.bio}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="px-5 pb-5 pt-2 border-t border-hairline/60">
-                  <div className="flex flex-wrap gap-1">
-                    {member.qualifications.map((q: string, idx: number) => (
-                      <span
-                        key={idx}
-                        className="text-[10px] font-mono px-2 py-0.5 rounded bg-card border border-hairline text-muted"
-                      >
-                        {q}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. "WHY HOMEOWNERS CHOOSE SARQ" SPLIT PANEL */}
+      {/* 4. "WHY HOMEOWNERS CHOOSE SARQ" SPLIT PANEL */}
       <section className="py-20 bg-surface-deep text-surface border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

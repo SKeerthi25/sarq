@@ -26,10 +26,8 @@ import { SEO } from '../components/SEO';
 import { Button } from '../components/Button';
 import { Card } from '../components/Card';
 import { SectionHeading } from '../components/SectionHeading';
-import { StatCounter } from '../components/StatCounter';
 import { BeforeAfterSlider } from '../components/BeforeAfterSlider';
 import { TestimonialCarousel } from '../components/TestimonialCarousel';
-import { CostEstimator } from '../components/CostEstimator';
 import { Lightbox } from '../components/Lightbox';
 import { servicesData } from '../data/services';
 import { projectsData } from '../data/projects';
@@ -88,16 +86,12 @@ export const Home: React.FC = () => {
               {/* Trust Badge */}
               <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-3.5 py-1.5 rounded-full text-xs font-mono text-accent">
                 <span className="w-2 h-2 rounded-full bg-accent animate-ping" />
-                <span>BATTERSEA SW11 • DOMESTIC BUILDING CONTRACTOR</span>
+                <span>STARQ LTD</span>
               </div>
 
               {/* Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight text-white leading-[1.08]">
                 We Turn Up. <br />
-                <span className="text-accent underline decoration-brand decoration-4 underline-offset-4">
-                  We Build Properly.
-                </span>{' '}
-                <br />
                 We Finish On Time.
               </h1>
 
@@ -122,26 +116,10 @@ export const Home: React.FC = () => {
                   variant="white"
                   size="lg"
                   pill
-                  to="/quote-cost-guide"
+                  to="/projects"
                 >
-                  Estimate Costs Online
+                  View Recent Projects
                 </Button>
-              </div>
-
-              {/* Micro Trust Proof */}
-              <div className="pt-6 border-t border-white/15 grid grid-cols-3 gap-4 text-xs font-mono text-surface/80">
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-accent shrink-0" />
-                  <span>£5M Insured</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Award className="w-4 h-4 text-accent shrink-0" />
-                  <span>10-Yr Guarantee</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-accent shrink-0" />
-                  <span>Fixed Lump Sum</span>
-                </div>
               </div>
             </motion.div>
 
@@ -154,19 +132,22 @@ export const Home: React.FC = () => {
             >
               <div className="relative rounded-md border-2 border-white/20 overflow-hidden shadow-2xl bg-surface-deep group">
                 <img
-                  src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
-                  alt="SARQ Construction Live Site - Battersea Wrap-Around Extension"
+                  src="/photos/image copy.png"
+                  alt="SARQ Construction Live Site - Bespoke Residential Extension"
                   className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/photos/image.png';
+                  }}
                 />
 
                 {/* Floating Site Spec Tag */}
                 <div className="absolute bottom-4 left-4 right-4 bg-ink/90 backdrop-blur-md p-4 rounded border border-white/20 text-xs font-mono text-surface">
                   <div className="flex justify-between items-center text-accent font-bold mb-1">
-                    <span>LIVE CASE STUDY: SW11</span>
-                    <span>14 WEEKS ON SCHEDULE</span>
+                    <span>LIVE CASE STUDY</span>
+                    <span>COMPLETED ON SCHEDULE</span>
                   </div>
                   <p className="text-[11px] text-surface/80 line-clamp-1 font-sans">
-                    Battersea Victorian Wrap-Around with Cortizo Slimline Glazing
+                    Victorian Wrap-Around with Cortizo Slimline Glazing
                   </p>
                 </div>
               </div>
@@ -232,55 +213,87 @@ export const Home: React.FC = () => {
             subtitle="Every domestic build is managed by an in-house site team with rigorous structural calculations, Party Wall management, and milestone stage payments."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {servicesData.map((service, index) => (
-              <Card
-                key={service.id}
-                variant="interactive"
-                className="flex flex-col justify-between p-6 group hover:border-brand/50 transition-all"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="p-3 rounded bg-surface border border-hairline group-hover:border-brand/30 group-hover:bg-brand/5 transition-colors">
-                      {serviceIcons[service.slug]}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {servicesData.map((service) => {
+              const categoryLabel = 
+                service.slug === 'loft-conversions' ? 'CONVERSIONS' :
+                service.slug === 'kitchens-bathrooms' ? 'RENOVATIONS' :
+                service.slug === 'refurbishment' ? 'REFURBISHMENT' :
+                service.slug === 'extensions' ? 'EXTENSIONS' :
+                service.slug === 'new-build' ? 'NEW BUILD' :
+                service.slug === 'basement-structural' ? 'BASEMENTS' : 'STRUCTURAL';
+
+              return (
+                <div
+                  key={service.id}
+                  className="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-300 overflow-hidden flex flex-col justify-between group"
+                >
+                  <div>
+                    {/* Top Image Container with Floating Icon */}
+                    <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                      <img
+                        src={service.heroImage}
+                        alt={service.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).src = '/photos/image.png';
+                        }}
+                      />
+                      <div className="absolute top-3.5 left-3.5 p-2.5 rounded-xl bg-slate-950/85 backdrop-blur-md text-amber-400 border border-white/10 shadow-lg">
+                        {React.cloneElement(serviceIcons[service.slug] as React.ReactElement, {
+                          className: 'w-5 h-5 text-amber-400',
+                        })}
+                      </div>
                     </div>
-                    <span className="font-mono text-xs text-muted font-semibold">
-                      0{index + 1}
-                    </span>
+
+                    {/* Content Body */}
+                    <div className="p-6 sm:p-7 space-y-4">
+                      {/* Gold Eyebrow */}
+                      <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#C5A059] block">
+                        {categoryLabel}
+                      </span>
+
+                      {/* Main Title */}
+                      <h3 className="font-heading text-xl font-bold text-slate-900 group-hover:text-brand transition-colors">
+                        {service.shortTitle || service.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-sm text-slate-600 leading-relaxed line-clamp-3 font-normal">
+                        {service.description}
+                      </p>
+
+                      {/* Key Service Benefits */}
+                      <div className="pt-2 space-y-2.5">
+                        <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-900">
+                          KEY SERVICE BENEFITS:
+                        </h4>
+                        <div className="space-y-2">
+                          {service.keyFeatures.slice(0, 3).map((feat, idx) => (
+                            <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-700 font-medium">
+                              <CheckCircle2 className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
+                              <span className="leading-snug">{feat}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
-                  <h3 className="font-heading text-xl font-bold uppercase text-ink group-hover:text-brand transition-colors">
-                    {service.title}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-muted mt-2 leading-relaxed">
-                    {service.tagline}
-                  </p>
-
-                  <div className="mt-4 pt-4 border-t border-hairline/60 space-y-1.5 text-xs text-ink/80 font-mono">
-                    <div className="flex justify-between">
-                      <span className="text-muted">Typical Duration:</span>
-                      <span className="font-semibold">{service.durationAvg}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted">Starting Budget:</span>
-                      <span className="font-semibold text-brand">{service.startingCost}</span>
-                    </div>
+                  {/* Bottom Action CTA Button */}
+                  <div className="p-6 sm:p-7 pt-0">
+                    <Link
+                      to={`/services/${service.slug}`}
+                      className="w-full py-3 px-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-slate-100/90 text-slate-900 font-semibold text-xs flex items-center justify-between transition-all group/btn shadow-sm hover:shadow"
+                    >
+                      <span className="font-heading font-bold text-slate-900">Learn More About Service</span>
+                      <ArrowRight className="w-4 h-4 text-[#C5A059] group-hover/btn:translate-x-1 transition-transform" />
+                    </Link>
                   </div>
                 </div>
-
-                <div className="mt-6 pt-4 border-t border-hairline flex items-center justify-between">
-                  <Link
-                    to={`/services/${service.slug}`}
-                    className="font-heading text-xs font-bold uppercase tracking-wider text-brand hover:underline flex items-center gap-1.5"
-                  >
-                    <span>View Specifications</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                  <span className="text-[11px] font-mono text-muted">SW London</span>
-                </div>
-              </Card>
-            ))}
+              );
+            })}
           </div>
 
           <div className="mt-12 text-center">
@@ -407,58 +420,11 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 6. DATA-FORWARD STAT COUNTERS BAND */}
-      <section className="py-16 bg-card border-b border-hairline">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            <StatCounter
-              value={120}
-              suffix="+"
-              label="London Projects Completed"
-              sublabel="Battersea, Wandsworth & Clapham"
-            />
-            <StatCounter
-              value={100}
-              suffix="%"
-              label="Building Regs Sign-Off"
-              sublabel="Zero failed inspections"
-            />
-            <StatCounter
-              prefix="£"
-              value={5}
-              suffix="M"
-              label="Public Liability Cover"
-              sublabel="Fully insured site operations"
-            />
-            <StatCounter
-              value={10}
-              suffix=" Yrs"
-              label="Structural Guarantees"
-              sublabel="Insurance-backed latent defect"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* 7. INTERACTIVE COST ESTIMATOR BAND */}
-      <section className="py-20 bg-surface border-b border-hairline">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            number="04"
-            microLabel="Transparent Pricing"
-            title="Instant Domestic Budget Estimator"
-            subtitle="Calculate realistic 2025/2026 London domestic construction costs based on project type, floor area, and finish level."
-          />
-
-          <CostEstimator />
-        </div>
-      </section>
-
-      {/* 8. VERIFIED CLIENT TESTIMONIALS */}
+      {/* 6. VERIFIED CLIENT TESTIMONIALS */}
       <section className="py-20 bg-card border-b border-hairline">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            number="05"
+            number="04"
             microLabel="Homeowner Reviews"
             title="What South West London Clients Say"
             subtitle="Authentic feedback from homeowners whose extensions, lofts, and refurbishments we have built across SW11, SW4, SW18, and SW15."

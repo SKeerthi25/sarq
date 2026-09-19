@@ -17,7 +17,6 @@ const GroundworksRoofing = lazy(() => import('./pages/services/GroundworksRoofin
 const Projects = lazy(() => import('./pages/Projects').then(m => ({ default: m.Projects })));
 const ProjectDetail = lazy(() => import('./pages/ProjectDetail').then(m => ({ default: m.ProjectDetail })));
 const Process = lazy(() => import('./pages/Process').then(m => ({ default: m.Process })));
-const QuoteCostGuide = lazy(() => import('./pages/QuoteCostGuide').then(m => ({ default: m.QuoteCostGuide })));
 const RequestQuote = lazy(() => import('./pages/RequestQuote').then(m => ({ default: m.RequestQuote })));
 const Accreditations = lazy(() => import('./pages/Accreditations').then(m => ({ default: m.Accreditations })));
 const TestimonialsPage = lazy(() => import('./pages/TestimonialsPage').then(m => ({ default: m.TestimonialsPage })));
@@ -25,7 +24,6 @@ const Blog = lazy(() => import('./pages/Blog').then(m => ({ default: m.Blog })))
 const BlogPost = lazy(() => import('./pages/BlogPost').then(m => ({ default: m.BlogPost })));
 const FAQPage = lazy(() => import('./pages/FAQPage').then(m => ({ default: m.FAQPage })));
 const Careers = lazy(() => import('./pages/Careers').then(m => ({ default: m.Careers })));
-const AreasWeCover = lazy(() => import('./pages/AreasWeCover').then(m => ({ default: m.AreasWeCover })));
 const Contact = lazy(() => import('./pages/Contact').then(m => ({ default: m.Contact })));
 const PrivacyPolicy = lazy(() => import('./pages/legal/PrivacyPolicy').then(m => ({ default: m.PrivacyPolicy })));
 const Terms = lazy(() => import('./pages/legal/Terms').then(m => ({ default: m.Terms })));
@@ -65,9 +63,8 @@ export function App() {
             <Route path="projects" element={<Projects />} />
             <Route path="projects/:slug" element={<ProjectDetail />} />
 
-            {/* Process & Cost Estimator */}
+            {/* Process & Quote */}
             <Route path="process" element={<Process />} />
-            <Route path="quote-cost-guide" element={<QuoteCostGuide />} />
             <Route path="request-a-quote" element={<RequestQuote />} />
 
             {/* Trust, Reviews & Knowledge */}
@@ -77,7 +74,6 @@ export function App() {
             <Route path="blog/:slug" element={<BlogPost />} />
             <Route path="faq" element={<FAQPage />} />
             <Route path="careers" element={<Careers />} />
-            <Route path="areas-we-cover" element={<AreasWeCover />} />
             <Route path="contact" element={<Contact />} />
 
             {/* Legal */}

@@ -49,8 +49,8 @@ export const Refurbishment: React.FC = () => {
                 <Button variant="accent" size="lg" pill to="/request-a-quote">
                   Book Refurbishment Site Survey
                 </Button>
-                <Button variant="white" size="lg" pill to="/quote-cost-guide">
-                  Estimate Refurbishment Costs
+                <Button variant="white" size="lg" pill to="/projects">
+                  View Case Studies
                 </Button>
               </div>
             </div>
@@ -61,12 +61,8 @@ export const Refurbishment: React.FC = () => {
                   Full Refurbishment Scope
                 </h3>
                 <div className="space-y-3 text-xs font-mono">
-                  <div className="flex justify-between border-b border-white/10 pb-1.5">
-                    <span className="text-surface/60">Typical Timeline:</span>
-                    <span className="text-white font-bold">{service.durationAvg}</span>
-                  </div>
-                  <div className="flex justify-between border-b border-white/10 pb-1.5">
-                    <span className="text-surface/60">Starting Baseline:</span>
+                  <div className="bg-white/5 border border-white/10 px-3 py-1.5 rounded">
+                    <span className="text-surface/60">Typical Investment: </span>
                     <span className="text-accent font-bold">From {service.startingCost}</span>
                   </div>
                   <div className="flex justify-between border-b border-white/10 pb-1.5">
@@ -92,7 +88,7 @@ export const Refurbishment: React.FC = () => {
               number="01"
               microLabel="Before & After Transformation"
               title={refurbProject.title}
-              subtitle="Inspect our complete 5-storey back-to-brick restoration in Wandsworth, showing dilapidated period interior transformed into luxury contemporary living."
+              subtitle="Inspect our complete 5-storey back-to-brick restoration project, showing dilapidated period interior transformed into luxury contemporary living."
             />
 
             <div className="max-w-4xl mx-auto">

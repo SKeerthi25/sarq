@@ -24,7 +24,7 @@ export const Process: React.FC = () => {
       num: '01',
       title: 'Initial Consultation & 3D Laser Site Survey',
       icon: <PhoneCall className="w-6 h-6 text-brand" />,
-      timeline: 'Days 1 – 3',
+      timeline: 'Initial Survey',
       description: 'We meet at your London property to review architectural drawings or conduct a precision digital laser measurement. We assess Party Wall considerations, Thames Water drainage runs, and structural access routes.',
       keyDeliverables: [
         'Complimentary on-site technical consultation with Senior Estimator',
@@ -36,7 +36,7 @@ export const Process: React.FC = () => {
       num: '02',
       title: 'Fixed Lump-Sum Tender & JCT Minor Works Contract',
       icon: <FileSignature className="w-6 h-6 text-brand" />,
-      timeline: 'Days 4 – 7',
+      timeline: 'Tender & Contract',
       description: 'You receive an itemised, transparent schedule of works specifying every material, fixture allowance, and structural steel beam. We execute a standard JCT Minor Works or RIBA domestic contract with zero hidden variation clauses.',
       keyDeliverables: [
         'Detailed line-by-line cost schedule in GBP',
@@ -48,7 +48,7 @@ export const Process: React.FC = () => {
       num: '03',
       title: 'Statutory Compliance & Party Wall Awards',
       icon: <FileCheck2 className="w-6 h-6 text-brand" />,
-      timeline: 'Weeks 1 – 4 (Pre-Start)',
+      timeline: 'Statutory Approvals',
       description: 'We liaise directly with your Local Authority Building Control (or private Approved Inspector), submit Section 106 Thames Water Build-Over notices, and ensure Party Wall Awards and Schedules of Condition are fully executed.',
       keyDeliverables: [
         'Initial Building Notice / Full Plans submission to Building Control',
@@ -60,7 +60,7 @@ export const Process: React.FC = () => {
       num: '04',
       title: 'Site Mobilisation, Dust Sealing & Safe Demolition',
       icon: <HardHat className="w-6 h-6 text-brand" />,
-      timeline: 'Site Week 1 – 2',
+      timeline: 'Mobilisation & Strip-out',
       description: 'Our site team arrives promptly at 7:30am. We install heavy-duty zip-sealed dust barriers, floor protection, independent external access scaffolding, and site welfare facilities before safe, sequenced strip-out commences.',
       keyDeliverables: [
         'Full protective screening of living zones & common areas',
@@ -72,7 +72,7 @@ export const Process: React.FC = () => {
       num: '05',
       title: 'Substructure, Concrete Footings & Structural Steelwork',
       icon: <Layers className="w-6 h-6 text-brand" />,
-      timeline: 'Site Weeks 3 – 6',
+      timeline: 'Substructure & Steel',
       description: 'We excavate footings, pour structural concrete under Building Control supervision, and crane in fabricated steel goalposts. Padstones and laser level deflections are signed off by our structural engineer.',
       keyDeliverables: [
         'Building Inspector foundation depth & sub-floor inspection sign-off',
@@ -84,7 +84,7 @@ export const Process: React.FC = () => {
       num: '06',
       title: 'Weathertight Envelope, Glazing & Roof Coverings',
       icon: <ShieldCheck className="w-6 h-6 text-brand" />,
-      timeline: 'Site Weeks 7 – 10',
+      timeline: 'Envelope & Roofing',
       description: 'Your extension or loft becomes completely watertight. We install aluminium sliding doors (Cortizo/Schuco), frameless structural glass roof lanterns, and high-grade slate or EPDM warm roof systems.',
       keyDeliverables: [
         'Structural glazing installation with perimeter airtight seals',
@@ -96,7 +96,7 @@ export const Process: React.FC = () => {
       num: '07',
       title: 'Mechanical, Electrical, Plastering & Architectural Joinery',
       icon: <Sparkles className="w-6 h-6 text-brand" />,
-      timeline: 'Site Weeks 11 – 14',
+      timeline: 'Fit-out & Joinery',
       description: 'First and second fix trades execute with surgical precision: Part P electrical rewiring, wet underfloor heating pressure testing, Megaflo cylinders, smooth plaster skimming, bespoke cabinetry, and tile laying.',
       keyDeliverables: [
         'Part P NICEIC Electrical Safety Certificate',
@@ -108,7 +108,7 @@ export const Process: React.FC = () => {
       num: '08',
       title: 'Snagging Audit, Building Control Certificate & 10-Year Warranty',
       icon: <Award className="w-6 h-6 text-brand" />,
-      timeline: 'Handover Week',
+      timeline: 'Final Handover',
       description: 'We conduct a rigorous 100% zero-snag audit with you. Building Control conducts their final statutory inspection and issues your Completion Certificate. We issue our 10-year insurance-backed structural warranty.',
       keyDeliverables: [
         'Official Local Authority / Approved Inspector Building Regulations Certificate',
@@ -206,8 +206,8 @@ export const Process: React.FC = () => {
             <Button variant="accent" size="lg" pill to="/request-a-quote">
               Request Step 01 Survey
             </Button>
-            <Button variant="white" size="lg" pill to="/quote-cost-guide">
-              Online Cost Calculator
+            <Button variant="white" size="lg" pill to="/contact">
+              Contact Our Team
             </Button>
           </div>
         </div>

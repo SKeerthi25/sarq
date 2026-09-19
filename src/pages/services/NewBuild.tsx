@@ -106,8 +106,8 @@ export const NewBuild: React.FC = () => {
                 <Button variant="accent" size="lg" pill to="/request-a-quote">
                   Book New Build Tender Consultation
                 </Button>
-                <Button variant="white" size="lg" pill to="/quote-cost-guide">
-                  Calculate Estimated Budget
+                <Button variant="white" size="lg" pill to="/projects">
+                  View New Build Projects
                 </Button>
               </div>
             </div>
@@ -118,10 +118,6 @@ export const NewBuild: React.FC = () => {
                   New Build Project Profile
                 </h3>
                 <div className="space-y-3 text-xs font-mono">
-                  <div className="flex justify-between border-b border-white/10 pb-1.5">
-                    <span className="text-surface/60">Typical Build Duration:</span>
-                    <span className="text-white font-bold">{service.durationAvg}</span>
-                  </div>
                   <div className="flex justify-between border-b border-white/10 pb-1.5">
                     <span className="text-surface/60">Indicative Cost Rate:</span>
                     <span className="text-accent font-bold">From {service.startingCost}</span>
@@ -167,9 +163,6 @@ export const NewBuild: React.FC = () => {
                       {milestone.title}
                     </h3>
                   </div>
-                  <span className="font-mono text-xs text-muted font-semibold">
-                    {milestone.weeks}
-                  </span>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -235,9 +228,12 @@ export const NewBuild: React.FC = () => {
             <div className="lg:col-span-6">
               <div className="rounded-md border border-hairline overflow-hidden shadow-xl">
                 <img
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+                  src="/photos/image copy 14.png"
                   alt="SARQ New Build Project"
                   className="w-full aspect-[4/3] object-cover"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/photos/image.png';
+                  }}
                 />
               </div>
             </div>

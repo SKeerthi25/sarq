@@ -50,7 +50,7 @@ export const ProjectDetail: React.FC = () => {
             <ArrowLeft className="w-3.5 h-3.5" /> Back to All Projects
           </Link>
           <div className="hidden sm:block text-ink font-semibold">
-            {project.category} • {project.location}
+            {project.category}
           </div>
         </div>
       </section>
@@ -62,8 +62,6 @@ export const ProjectDetail: React.FC = () => {
           <div className="max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-3 py-1 rounded-full text-xs font-mono text-accent">
               <span>{project.category.toUpperCase()}</span>
-              <span>•</span>
-              <span>{project.location}</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-white leading-tight">
@@ -76,16 +74,8 @@ export const ProjectDetail: React.FC = () => {
 
             <div className="pt-2 flex flex-wrap gap-4 text-xs font-mono text-surface/80">
               <div className="bg-white/5 border border-white/10 px-3 py-1.5 rounded">
-                <span className="text-surface/60">Duration: </span>
-                <span className="text-white font-bold">{project.duration}</span>
-              </div>
-              <div className="bg-white/5 border border-white/10 px-3 py-1.5 rounded">
                 <span className="text-surface/60">Budget Range: </span>
                 <span className="text-accent font-bold">{project.budgetRange}</span>
-              </div>
-              <div className="bg-white/5 border border-white/10 px-3 py-1.5 rounded">
-                <span className="text-surface/60">Postcode Area: </span>
-                <span className="text-white font-bold">{project.postcode}</span>
               </div>
             </div>
           </div>
@@ -166,7 +156,7 @@ export const ProjectDetail: React.FC = () => {
                     "{project.clientQuote.text}"
                   </p>
                   <div className="mt-4 pt-3 border-t border-white/10 text-xs font-mono text-accent">
-                    <strong>{project.clientQuote.author}</strong> — {project.clientQuote.area}
+                    <strong>{project.clientQuote.author}</strong>
                   </div>
                 </div>
               )}
@@ -191,9 +181,6 @@ export const ProjectDetail: React.FC = () => {
                 <div className="pt-4 space-y-3">
                   <Button variant="primary" size="lg" pill to="/request-a-quote" className="w-full text-center">
                     Request Quote for Similar Build
-                  </Button>
-                  <Button variant="outline" size="md" pill to="/quote-cost-guide" className="w-full text-center">
-                    Estimate Costs Online
                   </Button>
                 </div>
               </Card>
@@ -224,6 +211,9 @@ export const ProjectDetail: React.FC = () => {
                     src={img}
                     alt={`${project.title} detail ${idx + 1}`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = '/photos/image.png';
+                    }}
                   />
                   <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div className="p-3 rounded-full bg-ink/80 text-accent">

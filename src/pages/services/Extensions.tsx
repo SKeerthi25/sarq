@@ -83,8 +83,8 @@ export const Extensions: React.FC = () => {
                 <Button variant="accent" size="lg" pill to="/request-a-quote">
                   Book Complimentary Extension Survey
                 </Button>
-                <Button variant="white" size="lg" pill to="/quote-cost-guide">
-                  Calculate Extension Cost Online
+                <Button variant="white" size="lg" pill to="/projects">
+                  View Extension Projects
                 </Button>
               </div>
             </div>
@@ -95,10 +95,6 @@ export const Extensions: React.FC = () => {
                   Extensions Technical Benchmark
                 </h3>
                 <div className="space-y-3 text-xs font-mono">
-                  <div className="flex justify-between border-b border-white/10 pb-1.5">
-                    <span className="text-surface/60">Average Build Duration:</span>
-                    <span className="text-white font-bold">{service.durationAvg}</span>
-                  </div>
                   <div className="flex justify-between border-b border-white/10 pb-1.5">
                     <span className="text-surface/60">Starting Baseline:</span>
                     <span className="text-accent font-bold">From {service.startingCost}</span>
@@ -135,7 +131,6 @@ export const Extensions: React.FC = () => {
                 <tr className="bg-surface-deep text-surface border-b border-white/10 font-heading uppercase text-xs tracking-wider">
                   <th className="p-4 sm:p-5">Extension Type</th>
                   <th className="p-4 sm:p-5">Added Space</th>
-                  <th className="p-4 sm:p-5">Duration</th>
                   <th className="p-4 sm:p-5">Indicative Cost (2025)</th>
                   <th className="p-4 sm:p-5">Planning Route</th>
                 </tr>
@@ -148,7 +143,6 @@ export const Extensions: React.FC = () => {
                       <div className="text-xs text-muted font-normal mt-0.5 max-w-xs">{ext.desc}</div>
                     </td>
                     <td className="p-4 sm:p-5 font-mono text-ink font-semibold">{ext.sqmRange}</td>
-                    <td className="p-4 sm:p-5 font-mono text-muted">{ext.duration}</td>
                     <td className="p-4 sm:p-5 font-mono text-brand font-bold">{ext.costRange}</td>
                     <td className="p-4 sm:p-5 text-xs text-muted font-mono">{ext.planning}</td>
                   </tr>

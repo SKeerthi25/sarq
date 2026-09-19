@@ -105,11 +105,8 @@ export const TestimonialsPage: React.FC = () => {
 
                 <div className="mt-8 pt-4 border-t border-hairline flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <div>
-                    <h4 className="font-heading text-lg font-bold uppercase text-ink">
-                      {review.clientName}
-                    </h4>
-                    <p className="text-xs font-mono text-muted">
-                      {review.projectType} • {review.location}
+                    <p className="text-xs font-mono text-muted font-semibold">
+                      {review.projectType}
                     </p>
                   </div>
 
