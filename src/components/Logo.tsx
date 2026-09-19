@@ -178,10 +178,6 @@ export const Logo: React.FC<LogoProps> = ({
               >
                 Construction London
               </span>
-              <span className="w-1 h-1 rounded-full bg-accent inline-block" />
-              <span className={`font-mono font-medium text-accent ${sizeMap.sub}`}>
-                SW11
-              </span>
             </div>
           )}
         </div>
