@@ -8,6 +8,7 @@ import {
   Award,
   ArrowRight,
   ExternalLink,
+  Clock,
 } from 'lucide-react';
 import { servicesData } from '../data/services';
 import { Logo } from './Logo';
@@ -87,6 +88,13 @@ export const Footer: React.FC = () => {
               <div className="flex items-start gap-2 text-surface/70">
                 <MapPin className="w-4 h-4 text-accent shrink-0 mt-0.5" />
                 <span>Flat 51 Cranmer House, 60 Surrey Lane, London, England, SW11 3TB</span>
+              </div>
+              <div className="flex items-start gap-2 text-surface/70 pt-1">
+                <Clock className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                <div className="space-y-0.5 text-[11px]">
+                  <div>Mon – Fri: <span className="text-white font-semibold">09:00 – 18:00</span></div>
+                  <div>Sat – Sun: <span className="text-white font-semibold">10:00 – 16:00</span></div>
+                </div>
               </div>
             </div>
           </div>

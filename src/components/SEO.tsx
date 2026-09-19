@@ -48,14 +48,14 @@ export const SEO: React.FC<SEOProps> = ({
       {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '07:30',
+        opens: '09:00',
         closes: '18:00',
       },
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Saturday'],
-        opens: '08:00',
-        closes: '14:00',
+        dayOfWeek: ['Saturday', 'Sunday'],
+        opens: '10:00',
+        closes: '16:00',
       },
     ],
     areaServed: [

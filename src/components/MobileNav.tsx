@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { X, ChevronDown, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
+import { X, ChevronDown, Phone, Mail, MapPin, ArrowRight, Clock } from 'lucide-react';
 import { servicesData } from '../data/services';
 import { Button } from './Button';
 import { Logo } from './Logo';
@@ -259,6 +259,13 @@ export const MobileNav: React.FC<MobileNavProps> = ({
             </a>
             <div className="flex items-center gap-2">
               <MapPin className="w-3.5 h-3.5 text-accent shrink-0" /> Battersea, London SW11
+            </div>
+            <div className="flex items-start gap-2 pt-1 border-t border-white/10 text-white/90">
+              <Clock className="w-3.5 h-3.5 text-accent shrink-0 mt-0.5" />
+              <div className="space-y-0.5 text-[10px]">
+                <div>Mon – Fri: <span className="text-white font-bold">09:00 – 18:00</span></div>
+                <div>Sat – Sun: <span className="text-white font-bold">10:00 – 16:00</span></div>
+              </div>
             </div>
           </div>
         </div>
