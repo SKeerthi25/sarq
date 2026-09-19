@@ -56,10 +56,8 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header
-      className={`sticky top-0 z-40 transition-all duration-200 ${
-        scrolled
-          ? 'bg-card/95 backdrop-blur-md shadow-md border-b border-hairline py-2.5'
-          : 'bg-surface border-b border-hairline/60 py-3.5'
+      className={`sticky top-0 z-40 bg-white border-b border-hairline shadow-sm transition-all duration-200 ${
+        scrolled ? 'py-2.5 shadow-md' : 'py-3.5'
       }`}
     >
       {/* Top micro trust bar (desktop only) */}
@@ -276,7 +274,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Mobile Hamburger Button */}
             <button
               onClick={onOpenMobileNav}
-              className="lg:hidden p-2 rounded border border-hairline text-ink hover:border-brand transition-colors focus:outline-none"
+              className="lg:hidden p-2 rounded-md border border-hairline text-ink bg-surface hover:bg-hairline hover:text-brand transition-colors focus:outline-none shadow-sm"
               aria-label="Open navigation menu"
             >
               <Menu className="w-6 h-6" />

@@ -155,7 +155,7 @@ export const Logo: React.FC<LogoProps> = ({
               className={`font-heading font-black tracking-wider uppercase transition-colors ${sizeMap.title} ${
                 variant === 'footer'
                   ? 'text-white'
-                  : 'text-ink dark:text-white group-hover:text-brand dark:group-hover:text-brand'
+                  : 'text-ink group-hover:text-brand'
               }`}
             >
               SARQ
@@ -170,10 +170,10 @@ export const Logo: React.FC<LogoProps> = ({
           {showSubtitle && (
             <div className="flex items-center gap-1.5 mt-1 leading-none">
               <span
-                className={`font-heading font-bold uppercase tracking-[0.2em] ${sizeMap.sub} ${
+                className={`font-heading font-extrabold uppercase tracking-[0.16em] ${sizeMap.sub} ${
                   variant === 'footer'
-                    ? 'text-surface/70'
-                    : 'text-muted dark:text-surface/70 group-hover:text-ink dark:group-hover:text-white transition-colors'
+                    ? 'text-white/80'
+                    : 'text-ink/80 group-hover:text-brand transition-colors'
                 }`}
               >
                 Construction London
