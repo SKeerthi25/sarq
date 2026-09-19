@@ -4,8 +4,6 @@ import {
   Phone,
   Mail,
   MapPin,
-  ShieldCheck,
-  Award,
   ArrowRight,
   ExternalLink,
   Clock,
@@ -17,50 +15,6 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-surface-deep text-surface border-t border-white/10 pt-16 pb-28 sm:pb-16 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Trust Row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12 border-b border-white/10">
-          <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded bg-brand/20 border border-brand/40 text-accent flex items-center justify-center shrink-0">
-              <ShieldCheck className="w-6 h-6" />
-            </div>
-            <div>
-              <h4 className="font-heading text-base font-bold uppercase tracking-wider text-white">
-                £5M Insured & Guaranteed
-              </h4>
-              <p className="text-xs text-surface/70 mt-1 leading-relaxed">
-                Full Public & Employer's Liability cover with 10-year insurance-backed structural latent defect policies.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded bg-brand/20 border border-brand/40 text-accent flex items-center justify-center shrink-0">
-              <Award className="w-6 h-6" />
-            </div>
-            <div>
-              <h4 className="font-heading text-base font-bold uppercase tracking-wider text-white">
-                Fixed-Price JCT Contracts
-              </h4>
-              <p className="text-xs text-surface/70 mt-1 leading-relaxed">
-                Lump-sum certainty with transparent stage payments tied to independent Building Control sign-offs.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded bg-brand/20 border border-brand/40 text-accent flex items-center justify-center shrink-0">
-              <MapPin className="w-6 h-6" />
-            </div>
-            <div>
-              <h4 className="font-heading text-base font-bold uppercase tracking-wider text-white">
-                South West London Base
-              </h4>
-              <p className="text-xs text-surface/70 mt-1 leading-relaxed">
-                Dedicated local site teams operating across Battersea SW11, Wandsworth, Clapham, Fulham, Putney and M25.
-              </p>
-            </div>
-          </div>
-        </div>
 
         {/* Main 4-Column Footer Navigation */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 py-12 border-b border-white/10">
