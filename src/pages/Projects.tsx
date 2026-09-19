@@ -4,12 +4,8 @@ import {
   MapPin,
   Clock,
   ArrowRight,
-  Filter,
-  CheckCircle2,
-  Calendar,
   Camera,
   Maximize2,
-  Layers,
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { SectionHeading } from '../components/SectionHeading';
@@ -19,56 +15,14 @@ import { Lightbox } from '../components/Lightbox';
 import { projectsData } from '../data/projects';
 import { galleryPhotos, GalleryPhoto } from '../data/galleryPhotos';
 
-type CategoryFilter = 'All' | 'Extension' | 'Loft Conversion' | 'New Build' | 'Refurbishment' | 'Basement' | 'Kitchen & Bathroom';
-type PhotoCategoryFilter = 'All' | 'Structural & Steel' | 'Extensions & Masonry' | 'Loft & Roofing' | 'Kitchens & Interiors' | 'Basement & Groundworks';
-
 export const Projects: React.FC = () => {
-  // Case Studies Filters
-  const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>('All');
-  const [selectedArea, setSelectedArea] = useState<string>('All');
-
-  // On-Site Photo Gallery Filters & Lightbox State
-  const [photoCategory, setPhotoCategory] = useState<PhotoCategoryFilter>('All');
+  // On-Site Photo Gallery Lightbox State
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
 
-  const categories: CategoryFilter[] = [
-    'All',
-    'Extension',
-    'Loft Conversion',
-    'New Build',
-    'Refurbishment',
-    'Basement',
-    'Kitchen & Bathroom',
-  ];
-
-  const photoCategories: PhotoCategoryFilter[] = [
-    'All',
-    'Structural & Steel',
-    'Extensions & Masonry',
-    'Loft & Roofing',
-    'Kitchens & Interiors',
-    'Basement & Groundworks',
-  ];
-
-  const areas = ['All', 'SW11', 'SW4', 'SW18', 'SW15', 'SW6', 'SW19'];
-
-  const filteredProjects = useMemo(() => {
-    return projectsData.filter((project) => {
-      const matchCat = selectedCategory === 'All' || project.category === selectedCategory;
-      const matchArea = selectedArea === 'All' || project.postcode === selectedArea;
-      return matchCat && matchArea;
-    });
-  }, [selectedCategory, selectedArea]);
-
-  const filteredPhotos = useMemo(() => {
-    if (photoCategory === 'All') return galleryPhotos;
-    return galleryPhotos.filter((p) => p.category === photoCategory);
-  }, [photoCategory]);
-
   const allPhotoSrcs = useMemo(() => {
-    return filteredPhotos.map((p) => p.src);
-  }, [filteredPhotos]);
+    return galleryPhotos.map((p) => p.src);
+  }, []);
 
   const openLightboxAt = (index: number) => {
     setCurrentPhotoIndex(index);
@@ -98,138 +52,81 @@ export const Projects: React.FC = () => {
         </div>
       </section>
 
-      {/* Case Studies Filter Bar */}
-      <section className="bg-card border-b border-hairline sticky top-[69px] z-30 shadow-sm py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            {/* Category Chips */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
-              <span className="text-xs font-mono text-muted mr-1 hidden sm:inline-flex items-center gap-1">
-                <Filter className="w-3.5 h-3.5" /> Category:
-              </span>
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-heading font-bold uppercase tracking-wider whitespace-nowrap transition-colors ${
-                    selectedCategory === cat
-                      ? 'bg-brand text-white shadow-sm'
-                      : 'bg-surface text-ink hover:bg-hairline/60 border border-hairline'
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-
-            {/* Postcode Area Filter */}
-            <div className="flex items-center gap-2 shrink-0">
-              <span className="text-xs font-mono text-muted">Postcode:</span>
-              <div className="flex gap-1 overflow-x-auto">
-                {areas.map((area) => (
-                  <button
-                    key={area}
-                    onClick={() => setSelectedArea(area)}
-                    className={`px-2.5 py-1 rounded text-xs font-mono transition-colors ${
-                      selectedArea === area
-                        ? 'bg-ink text-accent font-bold'
-                        : 'bg-surface text-muted hover:text-ink border border-hairline'
-                    }`}
-                  >
-                    {area}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* 1. Main Case Studies Grid */}
       <section className="py-16 bg-surface border-b border-hairline">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {filteredProjects.length === 0 ? (
-            <div className="text-center py-20 bg-card rounded border border-hairline p-8">
-              <p className="text-lg font-heading font-bold uppercase text-ink">
-                No case studies match your current filter criteria
-              </p>
-              <button
-                onClick={() => {
-                  setSelectedCategory('All');
-                  setSelectedArea('All');
-                }}
-                className="mt-4 text-xs font-mono text-brand underline font-bold"
+          <div className="mb-10">
+            <span className="micro-label text-brand">Featured Case Studies</span>
+            <h2 className="text-3xl font-extrabold uppercase text-ink mt-1">
+              Bespoke Residential Transformations
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projectsData.map((project) => (
+              <Card
+                key={project.id}
+                variant="interactive"
+                className="p-0 overflow-hidden bg-card flex flex-col justify-between group hover:border-brand/40 transition-all"
               >
-                Reset All Filters
-              </button>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProjects.map((project) => (
-                <Card
-                  key={project.id}
-                  variant="interactive"
-                  className="p-0 overflow-hidden bg-card flex flex-col justify-between group hover:border-brand/40 transition-all"
-                >
-                  <div>
-                    {/* Cover Image */}
-                    <div className="relative aspect-[16/10] overflow-hidden bg-surface-deep">
-                      <img
-                        src={project.coverImage}
-                        alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute top-3 left-3 bg-ink/90 backdrop-blur-sm text-accent text-[11px] font-mono px-2.5 py-1 rounded border border-accent/20">
-                        {project.category}
-                      </div>
-                      <div className="absolute bottom-3 right-3 bg-black/70 backdrop-blur-sm text-white text-[11px] font-mono px-2 py-0.5 rounded flex items-center gap-1">
-                        <MapPin className="w-3 h-3 text-accent" /> {project.postcode}
-                      </div>
+                <div>
+                  {/* Cover Image */}
+                  <div className="relative aspect-[16/10] overflow-hidden bg-surface-deep">
+                    <img
+                      src={project.coverImage}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute top-3 left-3 bg-ink/90 backdrop-blur-sm text-accent text-[11px] font-mono px-2.5 py-1 rounded border border-accent/20">
+                      {project.category}
                     </div>
-
-                    {/* Content */}
-                    <div className="p-6">
-                      <div className="flex items-center gap-3 text-xs font-mono text-muted mb-2">
-                        <span>{project.location}</span>
-                        <span>•</span>
-                        <span>{project.duration}</span>
-                      </div>
-
-                      <h3 className="font-heading text-xl font-bold uppercase text-ink group-hover:text-brand transition-colors">
-                        {project.title}
-                      </h3>
-
-                      <p className="text-xs text-muted mt-2 line-clamp-2 leading-relaxed">
-                        {project.summary}
-                      </p>
-
-                      <div className="mt-4 pt-4 border-t border-hairline space-y-1.5 text-xs font-mono">
-                        <div className="flex justify-between">
-                          <span className="text-muted">Budget Range:</span>
-                          <span className="font-bold text-brand">{project.budgetRange}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-muted">Year Built:</span>
-                          <span className="text-ink">{project.year}</span>
-                        </div>
-                      </div>
+                    <div className="absolute bottom-3 right-3 bg-black/70 backdrop-blur-sm text-white text-[11px] font-mono px-2 py-0.5 rounded flex items-center gap-1">
+                      <MapPin className="w-3 h-3 text-accent" /> {project.postcode}
                     </div>
                   </div>
 
-                  {/* Footer Link */}
-                  <div className="px-6 pb-6 pt-2">
-                    <Link
-                      to={`/projects/${project.slug}`}
-                      className="inline-flex items-center justify-between w-full p-2.5 rounded bg-surface hover:bg-brand hover:text-white transition-colors text-xs font-heading font-bold uppercase text-ink border border-hairline"
-                    >
-                      <span>View Case Study Specs</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
+                  {/* Content */}
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 text-xs font-mono text-muted mb-2">
+                      <span>{project.location}</span>
+                      <span>•</span>
+                      <span>{project.duration}</span>
+                    </div>
+
+                    <h3 className="font-heading text-xl font-bold uppercase text-ink group-hover:text-brand transition-colors">
+                      {project.title}
+                    </h3>
+
+                    <p className="text-xs text-muted mt-2 line-clamp-2 leading-relaxed">
+                      {project.summary}
+                    </p>
+
+                    <div className="mt-4 pt-4 border-t border-hairline space-y-1.5 text-xs font-mono">
+                      <div className="flex justify-between">
+                        <span className="text-muted">Budget Range:</span>
+                        <span className="font-bold text-brand">{project.budgetRange}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-muted">Year Built:</span>
+                        <span className="text-ink">{project.year}</span>
+                      </div>
+                    </div>
                   </div>
-                </Card>
-              ))}
-            </div>
-          )}
+                </div>
+
+                {/* Footer Link */}
+                <div className="px-6 pb-6 pt-2">
+                  <Link
+                    to={`/projects/${project.slug}`}
+                    className="inline-flex items-center justify-between w-full p-2.5 rounded bg-surface hover:bg-brand hover:text-white transition-colors text-xs font-heading font-bold uppercase text-ink border border-hairline"
+                  >
+                    <span>View Case Study Specs</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -251,28 +148,11 @@ export const Projects: React.FC = () => {
                 Browse unedited, direct site photography from our active and recently completed residential builds across South West London. Click any photo for high-resolution inspection.
               </p>
             </div>
-
-            {/* Gallery Category Filter Chips */}
-            <div className="flex flex-wrap items-center gap-2">
-              {photoCategories.map((pCat) => (
-                <button
-                  key={pCat}
-                  onClick={() => setPhotoCategory(pCat)}
-                  className={`px-3 py-1.5 rounded-md text-xs font-heading font-bold uppercase tracking-wider transition-colors ${
-                    photoCategory === pCat
-                      ? 'bg-ink text-accent'
-                      : 'bg-surface text-ink hover:bg-hairline/60 border border-hairline'
-                  }`}
-                >
-                  {pCat}
-                </button>
-              ))}
-            </div>
           </div>
 
           {/* Photo Gallery Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {filteredPhotos.map((photo, index) => (
+            {galleryPhotos.map((photo, index) => (
               <div
                 key={photo.id}
                 onClick={() => openLightboxAt(index)}
@@ -323,7 +203,7 @@ export const Projects: React.FC = () => {
               <span>All photographs taken on live domestic construction sites managed by SARQ LTD.</span>
             </div>
             <span className="text-ink font-bold">
-              Showing {filteredPhotos.length} of {galleryPhotos.length} photos
+              Showing all {galleryPhotos.length} photos
             </span>
           </div>
         </div>
@@ -336,7 +216,7 @@ export const Projects: React.FC = () => {
         currentIndex={currentPhotoIndex}
         onClose={() => setLightboxOpen(false)}
         onIndexChange={(idx) => setCurrentPhotoIndex(idx)}
-        title={filteredPhotos[currentPhotoIndex]?.title}
+        title={galleryPhotos[currentPhotoIndex]?.title}
       />
 
       {/* Bottom CTA */}
