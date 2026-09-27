@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Explicit crawl allowances for Googlebot Favicon & Image indexers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /favicon.ico
+Allow: /favicon*
+Allow: /logo*
+Allow: /photos/
+
+Sitemap: https://www.sarqcons.co.uk/sitemap.xml
