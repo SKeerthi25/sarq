@@ -19,6 +19,7 @@ import { SectionHeading } from '../components/SectionHeading';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
 import { accreditationsData } from '../data/accreditations';
+import { teamData } from '../data/team';
 
 export const About: React.FC = () => {
   const companyValues = [
@@ -203,6 +204,19 @@ export const About: React.FC = () => {
                     <span className="text-surface/60">Legal Entity:</span>
                     <span className="font-bold text-white">SARQ LTD</span>
                   </div>
+                  <div className="flex justify-between border-b border-white/10 pb-2 items-center">
+                    <span className="text-surface/60">Company Director:</span>
+                    <span className="font-bold text-white flex items-center gap-1.5">
+                      <span>Saraswathi Rajappan</span>
+                      <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30">ACTIVE</span>
+                    </span>
+                  </div>
+                  <div className="flex justify-between border-b border-white/10 pb-2 items-center">
+                    <span className="text-surface/60">Officer Verification:</span>
+                    <span className="text-emerald-400 font-semibold flex items-center gap-1 text-[11px]">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> Requirements Complete
+                    </span>
+                  </div>
                   <div className="flex justify-between border-b border-white/10 pb-2">
                     <span className="text-surface/60">Company Number:</span>
                     <span className="font-bold text-accent">17460532</span>
@@ -225,6 +239,124 @@ export const About: React.FC = () => {
                   </div>
                 </div>
               </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. COMPANY LEADERSHIP & DIRECTORSHIP */}
+      <section className="py-20 bg-card border-b border-hairline">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            number="02"
+            microLabel="Executive Leadership"
+            title="Company Leadership & Directorship"
+            subtitle="Led by active, UK Companies House verified officers dedicated to statutory transparency and domestic construction excellence."
+          />
+
+          {/* Director Featured Spotlight */}
+          <div className="mb-12 bg-surface rounded-xl border border-hairline overflow-hidden shadow-lg">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 sm:p-10">
+              {/* Director Portrait */}
+              <div className="lg:col-span-4 flex flex-col items-center">
+                <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-xl overflow-hidden border-2 border-brand/30 shadow-2xl bg-surface-deep">
+                  <img
+                    src="/team/saraswathi-rajappan.jpg"
+                    alt="Saraswathi Rajappan - Director SARQ LTD"
+                    className="w-full h-full object-cover object-top"
+                  />
+                  <div className="absolute top-3 right-3 bg-emerald-600 text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded shadow">
+                    ACTIVE
+                  </div>
+                </div>
+                <div className="mt-3 flex items-center gap-1.5 text-xs font-mono text-emerald-600 dark:text-emerald-400 font-semibold">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                  <span>Verified Companies House Officer</span>
+                </div>
+              </div>
+
+              {/* Director Details & Directorship Statement */}
+              <div className="lg:col-span-8 space-y-4">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="micro-label text-brand">Statutory Director</span>
+                  <span className="text-xs font-mono text-muted">• Appointed 15 September 2026</span>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-extrabold uppercase text-ink">
+                    Saraswathi Rajappan
+                  </h3>
+                  <p className="text-sm font-mono text-brand font-bold mt-0.5">
+                    Director • SARQ LTD (Company No. 17460532)
+                  </p>
+                </div>
+
+                <p className="text-sm sm:text-base text-ink/85 leading-relaxed">
+                  As Director of SARQ LTD, Saraswathi Rajappan oversees corporate governance, strategic financial stewardship, commercial contract compliance, and client delivery across all London residential domestic building projects.
+                </p>
+
+                <div className="p-4 rounded-lg bg-card border-l-4 border-brand text-xs sm:text-sm font-medium italic text-ink/90 leading-relaxed">
+                  "Our commitment to London homeowners is built on absolute accountability. When you entrust SARQ LTD with your home, you have direct statutory oversight from verified company leadership dedicated to building safely, punctually, and with fixed-price contractual certainty."
+                </div>
+
+                <div className="pt-2 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-mono">
+                  <div className="p-3 rounded bg-card border border-hairline">
+                    <span className="text-muted block text-[10px] uppercase font-bold">Role</span>
+                    <span className="font-bold text-ink text-sm block">Director (Active)</span>
+                  </div>
+                  <div className="p-3 rounded bg-card border border-hairline">
+                    <span className="text-muted block text-[10px] uppercase font-bold">Appointed</span>
+                    <span className="font-bold text-ink text-sm block">15 Sept 2026</span>
+                  </div>
+                  <div className="p-3 rounded bg-card border border-hairline">
+                    <span className="text-muted block text-[10px] uppercase font-bold">Verification</span>
+                    <span className="font-bold text-emerald-600 dark:text-emerald-400 text-sm block flex items-center gap-1">
+                      <CheckCircle2 className="w-3.5 h-3.5" /> Requirements Met
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Operational Senior Management Team */}
+          <div className="mt-8">
+            <h4 className="font-heading text-lg font-bold uppercase tracking-wider text-ink mb-6">
+              Senior Site Operations & Surveying Team
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {teamData.slice(1).map((member, i) => (
+                <Card key={i} variant="elevated" className="p-6 bg-surface flex flex-col justify-between">
+                  <div>
+                    <div className="relative aspect-[4/3] rounded-lg overflow-hidden mb-4 bg-surface-deep">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <span className="font-mono text-xs text-brand font-bold block mb-1">
+                      {member.experience}
+                    </span>
+                    <h5 className="font-heading text-lg font-bold uppercase text-ink">
+                      {member.name}
+                    </h5>
+                    <p className="text-xs font-mono text-muted mb-3">
+                      {member.role}
+                    </p>
+                    <p className="text-xs text-ink/80 leading-relaxed mb-4">
+                      {member.bio}
+                    </p>
+                  </div>
+                  <div className="pt-3 border-t border-hairline flex flex-wrap gap-1.5">
+                    {member.qualifications.map((q, idx) => (
+                      <span key={idx} className="text-[10px] font-mono px-2 py-0.5 rounded bg-card border border-hairline text-muted">
+                        {q}
+                      </span>
+                    ))}
+                  </div>
+                </Card>
+              ))}
             </div>
           </div>
         </div>

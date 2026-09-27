@@ -32,6 +32,18 @@ export const SEO: React.FC<SEOProps> = ({
     description: 'Premier domestic building contractor specialising in residential home extensions, loft conversions, basements and full house refurbishments in South West London.',
     telephone: '+447448492982',
     email: 'cons@sarqltd.com',
+    founder: {
+      '@type': 'Person',
+      name: 'Saraswathi Rajappan',
+      jobTitle: 'Director',
+    },
+    employee: [
+      {
+        '@type': 'Person',
+        name: 'Saraswathi Rajappan',
+        jobTitle: 'Director',
+      },
+    ],
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Flat 51 Cranmer House, 60 Surrey Lane',

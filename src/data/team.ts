@@ -2,12 +2,12 @@ import { TeamMember } from '../types';
 
 export const teamData: TeamMember[] = [
   {
-    name: 'Sami Al-Qadi',
-    role: 'Managing Director & Founder',
-    experience: '18+ Years Experience',
-    qualifications: ['BSc (Hons) Construction Management', 'CIOB Member', 'SMSTS Certified'],
-    bio: 'Oversees company strategy, client procurement, and high-value project delivery. Passionate about engineering rigor, transparent client communication, and punctual execution on every London project.',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80'
+    name: 'Saraswathi Rajappan',
+    role: 'Director',
+    experience: 'Appointed Director & Registered Officer',
+    qualifications: ['Companies House Verified Officer', 'Director of SARQ LTD', 'Commercial Construction Governance', 'Statutory Compliance Lead'],
+    bio: 'Directs corporate governance, financial stewardship, commercial compliance, and strategic delivery for SARQ LTD across London residential domestic building projects.',
+    image: '/team/saraswathi-rajappan.jpg'
   },
   {
     name: 'Marcus Vance',
