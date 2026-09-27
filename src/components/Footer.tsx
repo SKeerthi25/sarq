@@ -120,7 +120,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Statutory Notice & Copyright */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-mono text-surface/60">
           <p className="text-center md:text-left leading-relaxed">
-            SARQ LTD — Registered in England & Wales. Company No. 17460532. Nature of business: Construction of domestic buildings (SIC 41202). Registered office: Flat 51 Cranmer House, 60 Surrey Lane, London, SW11 3TB.
+            SARQ LTD — Registered in England & Wales. Company No. 17460532. Director: Saraswathi Rajappan. Nature of business: Construction of domestic buildings (SIC 41202). Registered office: Flat 51 Cranmer House, 60 Surrey Lane, London, SW11 3TB.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 shrink-0 text-surface/80">
