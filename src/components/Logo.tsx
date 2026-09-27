@@ -176,7 +176,7 @@ export const Logo: React.FC<LogoProps> = ({
                     : 'text-ink/80 group-hover:text-brand transition-colors'
                 }`}
               >
-                Construction London
+                Construction
               </span>
             </div>
           )}

@@ -76,7 +76,7 @@ export const SplashLoader: React.FC<{ durationMs?: number; onFinish?: () => void
               transition={{ duration: 0.5, delay: 0.25 }}
               className="font-heading font-extrabold uppercase tracking-[0.22em] text-xs text-slate-500 mb-8"
             >
-              Construction London
+              Construction
             </motion.p>
 
             {/* Precision 3-Second Loading Bar */}
